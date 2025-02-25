@@ -1,0 +1,52 @@
+{
+  "consumer": {
+    "name": "pact-consumer-example"
+  },
+  "interactions": [
+    {
+      "description": "a request to get project 123",
+      "providerState": "project with ID 123 exists",
+      "request": {
+        "method": "GET",
+        "path": "/projects/123"
+      },
+      "response": {
+        "body": {
+          "id": "123",
+          "name": "Agile Transformation",
+          "status": "Active"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body.id": {
+            "match": "type"
+          },
+          "$.body.name": {
+            "match": "type"
+          },
+          "$.body.status": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "11.0.2"
+    },
+    "pactRust": {
+      "ffi": "0.4.0",
+      "models": "1.0.4"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "pact-example"
+  }
+}

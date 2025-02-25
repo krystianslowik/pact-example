@@ -1,0 +1,16 @@
+{
+  "name": "pact-consumer-example",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha \"tests/**/*.js\"",
+    "publish-pact": "npx pact-broker publish pacts --consumer-app-version 1.0.0 --broker-base-url http://jrse.firewall-gateway.com:9292"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "@pact-foundation/pact": "^11.0.0",
+    "mocha": "^10.0.0",
+    "chai": "^4.3.6"
+  }
+}
